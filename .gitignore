@@ -1,0 +1,15 @@
+# Virtual environment
+venv/
+
+# macOS / Linux specific files (optional, but good practice)
+.DS_Store
+*.pyc
+
+# IDE specific files (optional)
+.idea/
+.vscode/
+
+# Any data files, logs, or sensitive information you don't want to commit
+*.log
+*.db
+__pycache__/

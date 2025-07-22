@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live AI Expression Detector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-purple-100 font-sans text-gray-800 flex items-center justify-center min-h-screen p-4 overflow-hidden">
+
+    <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-10 w-full max-w-4xl text-center flex flex-col items-center transform transition-all duration-300 ease-in-out hover:scale-105">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-blue-800 mb-6 drop-shadow-lg animate-fade-in-down">
+            Live AI Expression Detector
+        </h1>
+
+        <div class="flex flex-col lg:flex-row lg:space-x-8 space-y-8 lg:space-y-0 items-center lg:items-start w-full">
+            <div class="relative w-full lg:w-3/5 bg-gray-900 rounded-xl overflow-hidden shadow-lg border-4 border-blue-400 transition-all duration-300 ease-in-out">
+                <video id="webcam" autoplay muted playsinline class="block w-full h-auto object-cover"></video>
+                <canvas id="emotionCanvas" class="absolute top-0 left-0 w-full h-full"></canvas>
+            </div>
+
+            <div class="w-full lg:w-2/5 flex flex-col items-center justify-between h-full lg:min-h-[400px]">
+                <div class="flex flex-col space-y-4 w-full">
+                    <button id="startButton" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 active:scale-95 text-lg">
+                        Start Camera
+                    </button>
+                    <button id="stopButton" disabled class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 active:scale-95 text-lg opacity-50 cursor-not-allowed">
+                        Stop Camera
+                    </button>
+                </div>
+
+                <p id="statusMessage" class="text-xl italic text-gray-600 my-6 animate-fade-in-out">Awaiting camera start...</p>
+
+                <div id="emotionDisplay" class="emotion-card transition-all duration-500 ease-out transform scale-95 opacity-0">
+                    <span class="text-3xl md:text-4xl font-extrabold">No Face Detected</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-gray-500 text-sm mt-8">Created by Dreamboy✒️</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
